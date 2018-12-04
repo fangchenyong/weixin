@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function(){
+			var url = "GetTicket";
+			$.get(url,function(ticket){
+				var src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket="+ticket;
+				$("img").attr("src",src);
+				});
+			});
+		});
+</script>
+<body>
+	<button>生成二维码</button>
+	<img alt="" src="">
+</body>
+</html>
